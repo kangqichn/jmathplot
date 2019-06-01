@@ -5,7 +5,6 @@ package org.math.plot.plots;
 
 import java.awt.*;
 
-import org.math.plot.*;
 import org.math.plot.render.*;
 import org.math.plot.utils.Array;
 
@@ -60,7 +59,7 @@ public class GridPlot3D extends Plot {
             for (int j = 0; j < Y.length - 1; j++) {
                 for (int i = 0; i < X.length - 1; i++) {
                     draw.fillPolygon(0.2f, new double[]{X[i], Y[j], Z[j][i]}, new double[]{X[i + 1], Y[j], Z[j][i + 1]}, new double[]{X[i + 1], Y[j + 1],
-                                Z[j + 1][i + 1]}, new double[]{X[i], Y[j + 1], Z[j + 1][i]});
+                        Z[j + 1][i + 1]}, new double[]{X[i], Y[j + 1], Z[j + 1][i]});
                 }
             }
         }
@@ -79,7 +78,7 @@ public class GridPlot3D extends Plot {
 
     @Override
     public void setData(double[][] _Z) {
-        datapanel=null;
+        datapanel = null;
         Z = _Z;
         buildXYZ_list();
     }
@@ -103,7 +102,7 @@ public class GridPlot3D extends Plot {
     }
 
     public void setDataX(double[] _X) {
-        datapanel=null;
+        datapanel = null;
         X = _X;
         buildXYZ_list();
     }
@@ -113,7 +112,7 @@ public class GridPlot3D extends Plot {
     }
 
     public void setDataY(double[] _Y) {
-        datapanel=null;
+        datapanel = null;
         Y = _Y;
         buildXYZ_list();
     }
@@ -123,7 +122,7 @@ public class GridPlot3D extends Plot {
     }
 
     public void setDataXYZ(double[] _X, double[] _Y, double[][] _Z) {
-        datapanel=null;
+        datapanel = null;
         X = _X;
         Y = _Y;
         Z = _Z;
@@ -145,25 +144,4 @@ public class GridPlot3D extends Plot {
         return null;
     }
 
-    public static void main(String[] args) {
-
-        int n = 14;
-        int m = 16;
-        Plot3DPanel p = new Plot3DPanel();
-        double[] X = new double[n];
-        double[] Y = new double[m];
-        double[][] Z = new double[m][n];
-
-        for (int i = 0; i < X.length; i++) {
-            X[i] = 3 + i / (double) X.length;
-            for (int j = 0; j < Y.length; j++) {
-                Y[j] = 5 + j / (double) Y.length;
-                Z[j][i] = Math.exp(X[i]) + Y[j];
-            }
-        }
-        p.addGridPlot("toto", X, Y, Z);
-
-        p.setLegendOrientation(PlotPanel.SOUTH);
-        new FrameView(p);
-    }
 }

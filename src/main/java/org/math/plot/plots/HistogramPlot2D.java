@@ -2,7 +2,6 @@ package org.math.plot.plots;
 
 import java.awt.*;
 
-import org.math.plot.*;
 import org.math.plot.render.*;
 import org.math.plot.utils.Array;
 
@@ -189,13 +188,4 @@ public class HistogramPlot2D extends Plot {
         return null;
     }
 
-    public static void main(String[] args) {
-        double[] X = new double[500];
-        for (int i = 0; i < X.length; i++) {
-            X[i] = Math.random() + Math.random();
-        }
-        Plot2DPanel p = new Plot2DPanel("SOUTH");
-        p.addHistogramPlot("test", X, 10);
-        new FrameView(p);
-    }
 }

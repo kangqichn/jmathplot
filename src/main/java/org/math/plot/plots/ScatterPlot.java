@@ -2,9 +2,6 @@ package org.math.plot.plots;
 
 import java.awt.*;
 
-import javax.swing.*;
-
-import org.math.plot.*;
 import org.math.plot.canvas.PlotCanvas;
 import org.math.plot.render.*;
 import org.math.plot.utils.Array;
@@ -96,39 +93,6 @@ public class ScatterPlot extends Plot {
             }
         }
         return null;
-    }
-
-    public static void main(String[] args) {
-        Plot2DPanel p2 = new Plot2DPanel();
-        for (int i = 0; i < 3; i++) {
-            double[][] XYZ = new double[10][2];
-            for (int j = 0; j < XYZ.length; j++) {
-                XYZ[j][0] = /*1 + */ Math.random();
-                XYZ[j][1] = /*100 * */ Math.random();
-            }
-            p2.addScatterPlot("toto" + i, XYZ);
-        }
-
-        p2.setLegendOrientation(PlotPanel.SOUTH);
-        new FrameView(p2).setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        Plot3DPanel p = new Plot3DPanel();
-        String[] tags = null;
-        for (int i = 0; i < 3; i++) {
-            double[][] XYZ = new double[10][3];
-            tags = new String[10];
-            for (int j = 0; j < XYZ.length; j++) {
-                XYZ[j][0] = /*1 +*/ 2.5 * Math.random();
-                XYZ[j][1] = /*100 **/ Math.random();
-                XYZ[j][2] = /*0.0001 **/ Math.random();
-                tags[j] = "tags " + j;
-            }
-            p.addScatterPlot("toto" + i, XYZ);
-        }
-        ((ScatterPlot) p.getPlot(0)).setTags(tags);
-
-        p.setLegendOrientation(PlotPanel.SOUTH);
-        new FrameView(p).setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
     /**

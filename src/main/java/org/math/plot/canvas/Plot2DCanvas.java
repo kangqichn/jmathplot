@@ -149,13 +149,4 @@ public class Plot2DCanvas extends PlotCanvas {
 		return addPlot(new CloudPlot2D(name, c, XYh, XYh[1][0] - XYh[0][0], XYh[nX][1] - XYh[0][1]));
 	}
 	
-	public static void main(String[] args) {
-		/*
-		 * Plot2DPanel p2d = new Plot2DPanel(DoubleArray.random(10, 2), "plot
-		 * 1", PlotPanel.SCATTER); new FrameView(p2d);
-		 * p2d.addPlot(DoubleArray.random(10, 2), "plot 2", PlotPanel.SCATTER);
-		 * p2d.grid.getAxe(0).darkLabel.setCorner(0.5, -10);
-		 * p2d.grid.getAxe(1).darkLabel.setCorner(0, -0.5);
-		 */
-	}
 }

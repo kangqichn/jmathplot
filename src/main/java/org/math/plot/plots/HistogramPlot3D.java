@@ -2,7 +2,6 @@ package org.math.plot.plots;
 
 import java.awt.*;
 
-import org.math.plot.*;
 import org.math.plot.render.*;
 import org.math.plot.utils.Array;
 
@@ -117,7 +116,7 @@ public class HistogramPlot3D extends Plot {
                 if (fill_shape) {
                     draw.fillPolygon(0.2f, topNW[i], topNE[i], topSE[i], topSW[i]);
                     //draw.fillPolygon(bottomNW[i], bottomNE[i], bottomSE[i], bottomSW[i]);
-				/*draw.fillPolygon(topNW[i], topNE[i], bottomNE[i], bottomNW[i]);
+                    /*draw.fillPolygon(topNW[i], topNE[i], bottomNE[i], bottomNW[i]);
                     draw.fillPolygon(topSW[i], topSE[i], bottomSE[i], bottomSW[i]);
                     draw.fillPolygon(topNE[i], topSE[i], bottomSE[i], bottomNE[i]);
                     draw.fillPolygon(topNW[i], topSW[i], bottomSW[i], bottomNW[i]);*/
@@ -184,14 +183,4 @@ public class HistogramPlot3D extends Plot {
         return null;
     }
 
-    public static void main(String[] args) {
-        double[][] XY = new double[500][2];
-        for (int i = 0; i < XY.length; i++) {
-            XY[i][0] = Math.random() + Math.random();
-            XY[i][1] = Math.random() + Math.random();
-        }
-        Plot3DPanel p = new Plot3DPanel("SOUTH");
-        p.addHistogramPlot("test", XY, 4, 6);
-        new FrameView(p);
-    }
 }

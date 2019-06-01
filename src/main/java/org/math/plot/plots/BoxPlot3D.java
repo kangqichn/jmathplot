@@ -2,10 +2,6 @@ package org.math.plot.plots;
 
 import java.awt.*;
 
-import javax.swing.JFrame;
-import org.math.plot.FrameView;
-import org.math.plot.Plot3DPanel;
-import org.math.plot.PlotPanel;
 import org.math.plot.render.*;
 import org.math.plot.utils.Array;
 
@@ -34,7 +30,6 @@ public class BoxPlot3D extends Plot {
         // widthsMax[1] / 2, datasMax[2] + widthsMax[2] / 2 };
         // base.includeInBounds(min);
         // base.includeInBounds(max);
-
         Xmin = new double[XY.length];
         Xmax = new double[XY.length];
         Ymin = new double[XY.length];
@@ -119,22 +114,4 @@ public class BoxPlot3D extends Plot {
         return null;
     }
 
-    public static void main(String[] args) {
-        Plot3DPanel plotpanel = new Plot3DPanel();
-        for (int i = 0; i < 1; i++) {
-            double[][] receiverXYZ = new double[100][6];
-            for (int j = 0; j < receiverXYZ.length; j++) {
-                receiverXYZ[j][0] = /*1 + */ Math.random();
-                receiverXYZ[j][1] = /*100 * */ Math.random();
-                receiverXYZ[j][2] = /*100 * */ Math.random();
-                receiverXYZ[j][3] = /*1 + */ Math.random() / 10;
-                receiverXYZ[j][4] = /*100 * */ Math.random() / 10;
-                receiverXYZ[j][5] = /*100 * */ Math.random() / 10;
-            }
-            int receiverPlotDataIndex = plotpanel.addBoxPlot("Receivers", Color.orange, receiverXYZ);
-        }
-
-        plotpanel.setLegendOrientation(PlotPanel.SOUTH);
-        new FrameView(plotpanel).setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
 }
