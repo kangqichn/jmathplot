@@ -25,6 +25,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import org.math.array.DoubleArray;
 import org.math.plot.utils.Array;
 
 /**
@@ -597,7 +598,7 @@ public class DataSelectPanel extends JPanel {
 
         public ParameterRow(String paramName, Object[] values) {
             _paramName = paramName;
-            _isNumber = Array.isDouble(values[0].toString());
+            _isNumber = DoubleArray.isDouble(values[0].toString());
 
             if (!_isNumber) {
                 _kernelStringValues = new Vector<Object>(values.length);

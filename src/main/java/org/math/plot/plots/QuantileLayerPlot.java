@@ -1,9 +1,8 @@
 package org.math.plot.plots;
 
 import java.awt.Color;
-
+import org.math.array.DoubleArray;
 import org.math.plot.render.AbstractDrawer;
-import org.math.plot.utils.Array;
 
 /**
  * @author Yann RICHET
@@ -54,7 +53,7 @@ public class QuantileLayerPlot extends LayerPlot {
     public QuantileLayerPlot(Plot p, int a, double[] q, double r, boolean _symetric) {
         super(r + " quantile of " + p.name, p);
         if (q != null) {
-            Array.checkLength(q, p.getData().length);
+            DoubleArray.checkLength(q, p.getData().length);
         }
         Q = q;
         axe = a;
@@ -87,7 +86,7 @@ public class QuantileLayerPlot extends LayerPlot {
         draw.setLineWidth(WIDTH);
         if (main_data_constant == 0) {
             for (int i = 0; i < plot.getData().length; i++) {
-                double[] d = Array.getRowCopy(plot.getData(), i);
+                double[] d = DoubleArray.getRowCopy(plot.getData(), i);
                 d[axe] += Q[i];///quantileRate;
                 draw.setGradient(plot.getData()[i], c, d, gradC);
                 draw.drawLine(plot.getData()[i], d);
@@ -102,7 +101,7 @@ public class QuantileLayerPlot extends LayerPlot {
             }
         } else {
             for (int i = 0; i < plot.getData().length; i++) {
-                double[] d = Array.getRowCopy(plot.getData(), i);
+                double[] d = DoubleArray.getRowCopy(plot.getData(), i);
                 d[axe] += main_data_constant;///quantileRate;
                 draw.setGradient(plot.getData()[i], c, d, gradC);
                 draw.drawLine(plot.getData()[i], d);

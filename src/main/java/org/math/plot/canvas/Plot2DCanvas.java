@@ -1,13 +1,14 @@
 package org.math.plot.canvas;
 
 import java.awt.*;
-
+import static org.math.array.DoubleArray.getColumnCopy;
+import static org.math.array.DoubleArray.getColumnsRangeCopy;
+import static org.math.array.DoubleArray.increment;
+import static org.math.array.DoubleArray.mergeColumns;
 import org.math.plot.plotObjects.*;
+import static org.math.plot.plotObjects.Base.*;
 import org.math.plot.plots.*;
 import org.math.plot.render.*;
-
-import static org.math.plot.plotObjects.Base.*;
-import static org.math.plot.utils.Array.*;
 import static org.math.plot.utils.Histogram.*;
 
 /**
@@ -49,7 +50,7 @@ public class Plot2DCanvas extends PlotCanvas {
 	}
 
 	private static double[][] convertY(double[] XY) {
-		double[] x = increment(XY.length, 1, 1);
+		double[] x = increment(XY.length, 1.0, 1.0);
 		return mergeColumns(x, XY);
 	}
 

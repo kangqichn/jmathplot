@@ -1,15 +1,14 @@
 package org.math.plot.canvas;
 
-import org.math.plot.utils.FastMath;
 import java.awt.*;
 import java.awt.event.*;
-
+import static org.math.array.DoubleArray.getColumnsRangeCopy;
+import static org.math.array.DoubleArray.getSubMatrixRangeCopy;
+import static org.math.array.DoubleArray.mergeColumns;
 import org.math.plot.plotObjects.*;
+import static org.math.plot.plotObjects.Base.*;
 import org.math.plot.plots.*;
 import org.math.plot.render.*;
-
-import static org.math.plot.plotObjects.Base.*;
-import static org.math.plot.utils.Array.*;
 import static org.math.plot.utils.Histogram.*;
 
 /**

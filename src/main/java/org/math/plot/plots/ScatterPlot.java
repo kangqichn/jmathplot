@@ -1,7 +1,7 @@
 package org.math.plot.plots;
 
 import java.awt.*;
-
+import org.math.array.DoubleArray;
 import org.math.plot.canvas.PlotCanvas;
 import org.math.plot.render.*;
 import org.math.plot.utils.Array;
@@ -81,7 +81,7 @@ public class ScatterPlot extends Plot {
 
     @Override
     public double[][] getBounds() {
-        return Array.mergeRows(Array.min(XY), Array.max(XY));
+        return DoubleArray.mergeRows(Array.min(XY), Array.max(XY));
     }
 
     public double[] isSelected(int[] screenCoordTest, AbstractDrawer draw) {
@@ -115,7 +115,7 @@ public class ScatterPlot extends Plot {
             draw.setColor(PlotCanvas.NOTE_COLOR);
             for (int i = 0; i < XY.length; i++) {
                 if (tags.length > i) {
-                    if (Array.equals(XY[i], coordNoted)) {
+                    if (DoubleArray.equals(XY[i], coordNoted)) {
                         draw.drawShadowedText(tags[i], .5f, coordNoted);
                     }
                 }

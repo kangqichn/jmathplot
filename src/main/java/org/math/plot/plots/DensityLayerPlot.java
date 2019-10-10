@@ -1,9 +1,9 @@
 package org.math.plot.plots;
 
 import java.awt.Color;
-
+import org.math.array.DoubleArray;
+import static org.math.array.DoubleArray.getRowCopy;
 import org.math.plot.render.AbstractDrawer;
-import org.math.plot.utils.Array;
 
 /**
  * @author Yann RICHET
@@ -35,7 +35,7 @@ public class DensityLayerPlot extends LayerPlot {
     public DensityLayerPlot(Plot p, int a, double[][] quantiles) {
         super("Density of " + p.name, p);
         if (quantiles != null && quantiles.length > 0) {
-            Array.checkRowDimension(quantiles, p.getData().length);
+            DoubleArray.checkRowDimension(quantiles, p.getData().length);
         }
         Q = quantiles;
         axis = a;
@@ -62,9 +62,9 @@ public class DensityLayerPlot extends LayerPlot {
                     norm = Math.min(1 / (Q[i][j + 1] - Q[i][j]), norm);
                 }
 
-                double[] d0 = Array.getRowCopy(plot.getData(), i);
-                double[] d1 = Array.getRowCopy(plot.getData(), i);
-                double[] d2 = Array.getRowCopy(plot.getData(), i);
+                double[] d0 = getRowCopy(plot.getData(), i);
+                double[] d1 = getRowCopy(plot.getData(), i);
+                double[] d2 = getRowCopy(plot.getData(), i);
 
                 for (int j = 0; j < Q[i].length - 2; j++) {
                     d1[axis] = d0[axis] + ((Q[i][j] + Q[i][j + 1]) / 2);
@@ -83,9 +83,9 @@ public class DensityLayerPlot extends LayerPlot {
             }
 
             for (int i = 0; i < plot.getData().length; i++) {
-                double[] d0 = Array.getRowCopy(plot.getData(), i);
-                double[] d1 = Array.getRowCopy(plot.getData(), i);
-                double[] d2 = Array.getRowCopy(plot.getData(), i);
+                double[] d0 = getRowCopy(plot.getData(), i);
+                double[] d1 = getRowCopy(plot.getData(), i);
+                double[] d2 = getRowCopy(plot.getData(), i);
 
                 for (int j = 0; j < constant_Q.length - 2; j++) {
                     d1[axis] = d0[axis] + (constant_Q[j] + constant_Q[j + 1]) / 2;

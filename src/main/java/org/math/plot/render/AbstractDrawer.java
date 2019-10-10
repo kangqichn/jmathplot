@@ -4,9 +4,8 @@
 package org.math.plot.render;
 
 import java.awt.*;
-
+import org.math.array.DoubleArray;
 import org.math.plot.canvas.*;
-import org.math.plot.utils.*;
 
 public abstract class AbstractDrawer {
 
@@ -194,7 +193,7 @@ public abstract class AbstractDrawer {
 
     public void drawCoordinate(double... pC) {
         for (int i = 0; i < canvas.base.dimension; i++) {
-            double[] axeprojection = Array.copy(pC);
+            double[] axeprojection = DoubleArray.copy(pC);
             axeprojection[i] = canvas.base.baseCoords[0][i];
             drawLine(pC, axeprojection);
         }

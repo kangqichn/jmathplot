@@ -28,7 +28,6 @@
             <groupId>com.github.yannrichet</groupId>
             <artifactId>jmatharray</artifactId>
             <version>1.0</version>
-            <optional>true</optional>
         </dependency>
     </dependencies>
 

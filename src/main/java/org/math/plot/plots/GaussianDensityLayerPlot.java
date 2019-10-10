@@ -1,9 +1,8 @@
 package org.math.plot.plots;
 
 import java.awt.Color;
-
+import org.math.array.DoubleArray;
 import org.math.plot.render.AbstractDrawer;
-import org.math.plot.utils.Array;
 
 /**
  * @author Yann RICHET
@@ -51,7 +50,7 @@ public class GaussianDensityLayerPlot extends LayerPlot {
     public GaussianDensityLayerPlot(Plot p, int ax, double[] sigma) {
         super("Gauss quantile of " + p.name, p);
         if (sigma != null) {
-            Array.checkLength(sigma, p.getData().length);
+            DoubleArray.checkLength(sigma, p.getData().length);
         }
         this.sigma = sigma;
         axis = ax;
@@ -91,8 +90,8 @@ public class GaussianDensityLayerPlot extends LayerPlot {
                 gradC_2sigma = new Color(c.getRed(), c.getGreen(), c.getBlue(), (int) (255.0 * (gausspdf_sigma[i][2])));
                 gradC_3sigma = new Color(c.getRed(), c.getGreen(), c.getBlue(), (int) (255.0 * (gausspdf_sigma[i][3])));
 
-                double[] d = Array.getRowCopy(plot.getData(), i);
-                double[] d2 = Array.getRowCopy(plot.getData(), i);
+                double[] d = DoubleArray.getRowCopy(plot.getData(), i);
+                double[] d2 = DoubleArray.getRowCopy(plot.getData(), i);
                 d2[axis] += sigma[i];
                 draw.setGradient(d, gradC_0sigma, d2, gradC_1sigma);
                 draw.drawLine(d, d2);
@@ -107,8 +106,8 @@ public class GaussianDensityLayerPlot extends LayerPlot {
                 draw.setGradient(d, gradC_2sigma, d2, gradC_3sigma);
                 draw.drawLine(d, d2);
 
-                d = Array.getRowCopy(plot.getData(), i);
-                d2 = Array.getRowCopy(plot.getData(), i);
+                d = DoubleArray.getRowCopy(plot.getData(), i);
+                d2 = DoubleArray.getRowCopy(plot.getData(), i);
                 d2[axis] -= sigma[i];
                 draw.setGradient(d2, gradC_1sigma, d, gradC_0sigma);
                 draw.drawLine(d2, d);
@@ -131,8 +130,8 @@ public class GaussianDensityLayerPlot extends LayerPlot {
 
             for (int i = 0; i < plot.getData().length; i++) {
 
-                double[] d = Array.getRowCopy(plot.getData(), i);
-                double[] d2 = Array.getRowCopy(plot.getData(), i);
+                double[] d = DoubleArray.getRowCopy(plot.getData(), i);
+                double[] d2 = DoubleArray.getRowCopy(plot.getData(), i);
                 d2[axis] += constant_sigma;
                 draw.setGradient(d, gradC_0sigma, d2, gradC_1sigma);
                 draw.drawLine(d, d2);
@@ -147,8 +146,8 @@ public class GaussianDensityLayerPlot extends LayerPlot {
                 draw.setGradient(d, gradC_2sigma, d2, gradC_3sigma);
                 draw.drawLine(d, d2);
 
-                d = Array.getRowCopy(plot.getData(), i);
-                d2 = Array.getRowCopy(plot.getData(), i);
+                d = DoubleArray.getRowCopy(plot.getData(), i);
+                d2 = DoubleArray.getRowCopy(plot.getData(), i);
                 d2[axis] -= constant_sigma;
                 draw.setGradient(d2, gradC_1sigma, d, gradC_0sigma);
                 draw.drawLine(d2, d);

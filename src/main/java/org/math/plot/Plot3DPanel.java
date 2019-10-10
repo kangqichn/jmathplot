@@ -1,9 +1,8 @@
 package org.math.plot;
 
 import java.awt.*;
-
+import static org.math.array.DoubleArray.getColumnsRangeCopy;
 import org.math.plot.canvas.*;
-import org.math.plot.utils.*;
 
 /**
  * BSD License
@@ -160,7 +159,7 @@ public class Plot3DPanel extends PlotPanel {
     }
 
     public int addBoxPlot(String name, Color c, double[][] XYdX) {
-        return ((Plot3DCanvas) plotCanvas).addBoxPlot(name, c, Array.getColumnsRangeCopy(XYdX, 0, 2), Array.getColumnsRangeCopy(XYdX, 3, 5));
+        return ((Plot3DCanvas) plotCanvas).addBoxPlot(name, c, getColumnsRangeCopy(XYdX, 0, 2), getColumnsRangeCopy(XYdX, 3, 5));
     }
 
     public int addBoxPlot(String name, double[][] XYdX) {
@@ -176,7 +175,7 @@ public class Plot3DPanel extends PlotPanel {
     }
 
     public int addHistogramPlot(String name, Color c, double[][] XYdX) {
-        return ((Plot3DCanvas) plotCanvas).addHistogramPlot(name, c, Array.getColumnsRangeCopy(XYdX, 0, 2), Array.getColumnsRangeCopy(XYdX, 3, 4));
+        return ((Plot3DCanvas) plotCanvas).addHistogramPlot(name, c, getColumnsRangeCopy(XYdX, 0, 2), getColumnsRangeCopy(XYdX, 3, 4));
     }
 
     public int addHistogramPlot(String name, double[][] XYdX) {

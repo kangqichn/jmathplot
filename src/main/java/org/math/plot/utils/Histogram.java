@@ -3,6 +3,8 @@
  */
 package org.math.plot.utils;
 
+import static org.math.array.DoubleArray.getColumnCopy;
+import static org.math.array.DoubleArray.mergeColumns;
 import static org.math.plot.utils.Array.*;
 
 public class Histogram {

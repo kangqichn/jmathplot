@@ -1,15 +1,12 @@
 package org.math.plot.canvas;
 
 import java.awt.BasicStroke;
-import java.awt.Stroke;
-import org.math.plot.render.AWTDrawer;
-import org.math.plot.utils.FastMath;
-import javax.swing.JFrame;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.RenderingHints;
+import java.awt.Stroke;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 import java.awt.event.MouseEvent;
@@ -25,23 +22,24 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Set;
-
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
-
+import org.math.array.DoubleArray;
 import org.math.plot.components.DataFrame;
 import org.math.plot.components.LegendPanel;
 import org.math.plot.components.ScalesFrame;
 import org.math.plot.plotObjects.Base;
+import static org.math.plot.plotObjects.Base.*;
 import org.math.plot.plotObjects.BaseDependant;
 import org.math.plot.plotObjects.BasePlot;
 import org.math.plot.plotObjects.Plotable;
 import org.math.plot.plots.Plot;
+import org.math.plot.render.AWTDrawer;
 import org.math.plot.render.AbstractDrawer;
 import org.math.plot.utils.Array;
-
-import static org.math.plot.plotObjects.Base.*;
+import org.math.plot.utils.FastMath;
 
 /**
  * BSD License
@@ -527,7 +525,7 @@ public abstract class PlotCanvas extends JPanel implements MouseListener, MouseM
 
         if (!mapset) {
             for (int j = 0; j < data[0].length; j++) {
-                if (!Array.isDouble(data[0][j].toString())) {
+                if (!DoubleArray.isDouble(data[0][j].toString())) {
                     //System.out.println(data[0][j].toString() + " is not a double");
                     setAxiScale(j, Base.STRINGS);
 
@@ -556,7 +554,7 @@ public abstract class PlotCanvas extends JPanel implements MouseListener, MouseM
             mapset = true;
         } else {
             for (int j = 0; j < data[0].length; j++) {
-                if (!Array.isDouble(data[0][j].toString())) {
+                if (!DoubleArray.isDouble(data[0][j].toString())) {
                     //System.out.println(data[0][j].toString() + " is not a double");
                     if (base.getAxeScale(j).equals(Base.STRINGS)) {
                         for (int i = 0; i < data.length; i++) {

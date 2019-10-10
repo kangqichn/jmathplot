@@ -6,13 +6,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.LinkedList;
-
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JColorChooser;
 import javax.swing.JPanel;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import org.math.array.DoubleArray;
 import org.math.plot.DataPanel;
 import org.math.plot.MatrixTablePanel;
 import org.math.plot.canvas.PlotCanvas;
@@ -97,12 +97,12 @@ public abstract class Plot implements Plotable, Noteable, Editable {
     public abstract double[][] getData();
 
     public double[] getBounds(int axis) {
-        return Array.getColumnCopy(getBounds(), axis);
+        return DoubleArray.getColumnCopy(getBounds(), axis);
     }
 
     /**This method should be abstract, but for backward compatibility, here is a basic impl.*/
     public double[][] getBounds() {
-        return Array.mergeRows(Array.min(getData()), Array.max(getData()));
+        return DoubleArray.mergeRows(Array.min(getData()), Array.max(getData()));
     }
 
     public void setVisible(boolean v) {
@@ -146,7 +146,7 @@ public abstract class Plot implements Plotable, Noteable, Editable {
 
         draw.setColor(PlotCanvas.NOTE_COLOR);
         draw.drawCoordinate(coordNoted);
-        draw.drawShadowedText(Array.cat("\n", draw.canvas.reverseMapedData(coordNoted)), .5f, coordNoted);
+        draw.drawShadowedText(Array.cat(draw.canvas.reverseMapedData(coordNoted)), .5f, coordNoted);
     }
 
     public abstract void plot(AbstractDrawer draw, Color c);

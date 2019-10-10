@@ -10,7 +10,6 @@ import java.awt.event.ActionEvent;
 import java.beans.PropertyChangeListener;
 import java.util.LinkedList;
 import java.util.Vector;
-
 import javax.swing.Action;
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
@@ -28,7 +27,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.TableModel;
-
+import org.math.array.DoubleArray;
 import org.math.plot.utils.Array;
 
 /**
@@ -447,7 +446,7 @@ public class DataSelectTable extends JPanel {
 
         public ParameterRow(String paramName, Object[] values) {
             _paramName = paramName;
-            _isNumber = Array.isDouble(values[0].toString());
+            _isNumber = DoubleArray.isDouble(values[0].toString());
 
             if (!_isNumber) {
                 _kernelStringValues = new Vector<Object>(values.length);

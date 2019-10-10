@@ -1,16 +1,15 @@
 package org.math.plot.plots;
 
 import java.awt.*;
-
+import org.math.array.DoubleArray;
 import org.math.plot.render.*;
-import org.math.plot.utils.*;
 
 /**
  * @author Yann RICHET
  * @version 1.0
  */
 /**
- * Layer to add a vector field to an existing Plot
+ * Layer to addInplace a vector field to an existing Plot
  */
 public class VectorLayerPlot extends LayerPlot {
 
@@ -27,8 +26,8 @@ public class VectorLayerPlot extends LayerPlot {
     public VectorLayerPlot(Plot p, double[][] v) {
         super("Vector of " + p.name, p);
         if (v != null) {
-            Array.checkRowDimension(v, p.getData().length);
-            Array.checkColumnDimension(v, p.getData()[0].length);
+            DoubleArray.checkRowDimension(v, p.getData().length);
+            DoubleArray.checkColumnDimension(v, p.getData()[0].length);
         }
         V = v;
 
@@ -54,7 +53,7 @@ public class VectorLayerPlot extends LayerPlot {
         draw.setLineType(AbstractDrawer.CONTINOUS_LINE);
 
         for (int i = 0; i < plot.getData().length; i++) {
-            double[] d = Array.getRowCopy(plot.getData(), i);
+            double[] d = DoubleArray.getRowCopy(plot.getData(), i);
             for (int j = 0; j < d.length; j++) {
                 d[j] += V[i][j];
             }

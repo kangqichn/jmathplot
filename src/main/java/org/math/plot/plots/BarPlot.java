@@ -1,9 +1,8 @@
 package org.math.plot.plots;
 
 import java.awt.*;
-
+import org.math.array.DoubleArray;
 import org.math.plot.render.*;
-import org.math.plot.utils.*;
 
 public class BarPlot extends ScatterPlot {
 
@@ -33,7 +32,7 @@ public class BarPlot extends ScatterPlot {
         draw.setColor(c);
         draw.setLineType(AbstractDrawer.CONTINOUS_LINE);
         for (int i = 0; i < XY.length; i++) {
-            double[] axeprojection = Array.copy(XY[i]);
+            double[] axeprojection = DoubleArray.copy(XY[i]);
             axeprojection[axeprojection.length - 1] = draw.canvas.base.baseCoords[0][axeprojection.length - 1];
             draw.drawLine(XY[i], axeprojection);
         }
