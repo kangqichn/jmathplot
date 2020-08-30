@@ -3,21 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package plot;
+package org.math.plot;
 
 import java.io.File;
 import javax.swing.JFrame;
 import org.math.io.files.ASCIIFile;
-import org.math.plot.FrameView;
-import org.math.plot.Plot2DPanel;
-import org.math.plot.Plot3DPanel;
-import org.math.plot.PlotPanel;
 import static org.math.plot.PlotPanel.SCATTER;
 import org.math.plot.utils.Array;
 
 /**
  *
- * @author kq<kangqichn@qq.com>
+ * @author kq
  */
 public class PlotPanelTest {
 
@@ -225,5 +221,4 @@ public class PlotPanelTest {
             System.err.println("\n" + man);
         }
     }
-
 }

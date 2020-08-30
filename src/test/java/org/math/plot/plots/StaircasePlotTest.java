@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package plot.plots;
+package org.math.plot.plots;
 
 import javax.swing.JFrame;
 import org.math.plot.FrameView;
@@ -11,7 +11,7 @@ import org.math.plot.Plot2DPanel;
 
 /**
  *
- * @author kq<kangqichn@qq.com>
+ * @author kq
  */
 public class StaircasePlotTest {
 

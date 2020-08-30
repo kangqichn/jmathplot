@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package plot.plots;
+package org.math.plot.plots;
 
 import java.awt.Color;
 import javax.swing.JFrame;
@@ -13,7 +13,7 @@ import org.math.plot.PlotPanel;
 
 /**
  *
- * @author kq<kangqichn@qq.com>
+ * @author kq
  */
 public class CloudPlot2DTest {
 

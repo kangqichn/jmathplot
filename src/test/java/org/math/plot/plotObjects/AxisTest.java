@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package plot.plotObjects;
+package org.math.plot.plotObjects;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -14,13 +14,14 @@ import org.math.plot.Plot3DPanel;
 
 /**
  *
- * @author kq<kangqichn@qq.com>
+ * @author kq
  */
 public class AxisTest {
 
     /*
 	 * MAIN METHOD(for testing)
      */
+
     public static void main(String[] args) {
         Plot3DPanel p = new Plot3DPanel();
         Object[][] XYZ = new Object[8][3];
