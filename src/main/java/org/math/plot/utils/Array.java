@@ -77,11 +77,11 @@ public class Array {
     }
 
     public static double[][] one(int m, int n) {
-        return DoubleArray.fill(m, n, 1.0);
+        return DoubleArray.ones(m, n);
     }
 
     public static double[] one(int m) {
-        return DoubleArray.fill(m, 1.0);
+        return DoubleArray.ones(m);
     }
 
     // Modify rows & colmumns methods

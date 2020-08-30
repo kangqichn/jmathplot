@@ -25,8 +25,8 @@
             <version>1.0</version>
         </dependency>
         <dependency>
-            <groupId>com.github.yannrichet</groupId>
-            <artifactId>jmatharray</artifactId>
+            <groupId>cn.edu.cup.mpf</groupId>
+            <artifactId>JMathArray</artifactId>
             <version>1.0</version>
         </dependency>
     </dependencies>
