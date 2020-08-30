@@ -22,7 +22,7 @@ public class PlotToolBar extends JToolBar {
     private static final long serialVersionUID = 1L;
     protected ButtonGroup buttonGroup;
     protected JToggleButton buttonCenter;
-    //protected JToggleButton buttonEdit;
+//    protected JToggleButton buttonEdit;
     protected JToggleButton buttonZoom;
     protected JToggleButton buttonRotate;
     //protected JToggleButton buttonViewCoords;
@@ -63,22 +63,22 @@ public class PlotToolBar extends JToolBar {
             buttonGroup = new ButtonGroup();
 
             buttonCenter = new JToggleButton(new ImageIcon(ImageIO.read(PlotPanel.class.getResourceAsStream("icons/center.png"))));
-            buttonCenter.setToolTipText("Center axis");
+            buttonCenter.setToolTipText("Pan");
             buttonCenter.setSelected(plotCanvas.ActionMode == PlotCanvas.TRANSLATION);
 
             buttonZoom = new JToggleButton(new ImageIcon(ImageIO.read(PlotPanel.class.getResourceAsStream("icons/zoom.png"))));
             buttonZoom.setToolTipText("Zoom");
             buttonZoom.setSelected(plotCanvas.ActionMode == PlotCanvas.ZOOM);
 
-		//buttonEdit = new JToggleButton(new ImageIcon(PlotPanel.class.getResource("icons/edit.png")));
-            //buttonEdit.setToolTipText("Edit mode");
+//	    buttonEdit = new JToggleButton(new ImageIcon(PlotPanel.class.getResource("icons/edit.png")));
+//            buttonEdit.setToolTipText("Edit mode");
 		//buttonViewCoords = new JToggleButton(new ImageIcon(PlotPanel.class.getResource("icons/position.png")));
             //buttonViewCoords.setToolTipText("Highlight coordinates / Highlight plot");
             buttonSetScales = new JButton(new ImageIcon(ImageIO.read(PlotPanel.class.getResourceAsStream("icons/scale.png"))));
             buttonSetScales.setToolTipText("Edit axis scales");
 
             buttonDatas = new JButton(new ImageIcon(ImageIO.read(PlotPanel.class.getResourceAsStream("icons/data.png"))));
-            buttonDatas.setToolTipText("Get data");
+            buttonDatas.setToolTipText("Data");
 
             buttonSavePNGFile = new JButton(new ImageIcon(ImageIO.read(PlotPanel.class.getResourceAsStream("icons/topngfile.png"))));
             buttonSavePNGFile.setToolTipText("Save graphics in a .PNG File");
@@ -89,11 +89,11 @@ public class PlotToolBar extends JToolBar {
             buttonAdjustBounds = new JButton(new ImageIcon(ImageIO.read(PlotPanel.class.getResourceAsStream(plotCanvas.getAdjustBounds() ? "icons/adjustbounds.png" : "icons/noadjustbounds.png"))));
             buttonAdjustBounds.setToolTipText("Auto-update/fix bounds");
 
-            /*buttonEdit.addActionListener(new ActionListener() {
-             public void actionPerformed(ActionEvent e) {
-             plotCanvas.ActionMode = PlotCanvas.EDIT;
-             }
-             });*/
+//            buttonEdit.addActionListener(new ActionListener() {
+//             public void actionPerformed(ActionEvent e) {
+//             plotCanvas.ActionMode = PlotCanvas.EDIT;
+//             }
+//             });
             buttonZoom.setSelected(true);
             buttonZoom.addActionListener(new ActionListener() {
 

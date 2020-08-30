@@ -20,6 +20,7 @@ public class FrameView extends JFrame {
 		setContentPane(panel);
 		pack();
 		setSize(600,600);
+                setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setVisible(true);
 	}
 
@@ -30,6 +31,7 @@ public class FrameView extends JFrame {
 		setContentPane(panel);
 		pack();
 		setSize(600,600);
+                setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setVisible(true);
 	}
 
@@ -38,6 +40,7 @@ public class FrameView extends JFrame {
 		setContentPane(panel);
 		pack();
 		setSize(600,600);
+                setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setVisible(true);
 	}
 
@@ -48,6 +51,7 @@ public class FrameView extends JFrame {
 		setContentPane(panel);
 		pack();
 		setSize(600,600);
+                setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setVisible(true);
 	}
 
@@ -55,6 +59,7 @@ public class FrameView extends JFrame {
 		setContentPane(panel);
 		pack();
 		setSize(600,600);
+                setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setVisible(true);
 	}
 

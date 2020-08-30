@@ -5,6 +5,7 @@
  */
 package org.math.plot.plots;
 
+import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import org.math.plot.FrameView;
 import org.math.plot.Plot3DPanel;
 import org.math.plot.PlotPanel;
@@ -34,6 +35,6 @@ public class GridPlot3DTest {
         p.addGridPlot("toto", X, Y, Z);
 
         p.setLegendOrientation(PlotPanel.SOUTH);
-        new FrameView(p);
+        new FrameView(p).setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 }
